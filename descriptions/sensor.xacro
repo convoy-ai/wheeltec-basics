@@ -1,12 +1,10 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:include filename="material.xacro" />
-
   <!-- laser -->
 
   <joint name="laser_joint" type="fixed">
-    <origin xyz="0.06 0.00 0.20" rpy="0 0 ${pi/2}" />
+    <origin xyz="0.05 0.00 0.18" rpy="0 0 ${pi/2}" />
     <parent link="base_link" />
     <child link="laser_link" />
   </joint>
@@ -15,7 +13,7 @@
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <cylinder radius="0.04" length="0.03" />
+        <cylinder radius="0.03" length="0.02" />
       </geometry>
       <material name="red" />
     </visual>
@@ -24,7 +22,7 @@
   <!-- gyro -->
 
   <joint name="gyro_joint" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0" />
+    <origin xyz="-0.04 0.00 0.14" rpy="0 0 0" />
     <parent link="base_link" />
     <child link="gyro_link" />
   </joint>

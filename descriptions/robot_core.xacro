@@ -1,8 +1,6 @@
 <?xml version="1.0" ?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-  <xacro:include filename="material.xacro" />
-
   <!-- base link -->
 
   <link name="base_link">
@@ -11,7 +9,7 @@
       <geometry>
         <box size="0.27 0.185 0.055" />
       </geometry>
-      <material name="white" />
+      <material name="base_link" />
     </visual>
   </link>
 
@@ -54,6 +52,7 @@
   </link>
 
   <!-- left front wheel -->
+
   <joint name="left_front_joint" type="continuous">
     <origin xyz="0.085 0.0975 0.0375" rpy="${pi/2} 0 0" />
     <parent link="base_link" />
@@ -72,6 +71,7 @@
   </link>
 
   <!-- right front wheel -->
+
   <joint name="right_front_joint" type="continuous">
     <origin xyz="0.085 -0.0975 0.0375" rpy="${pi/2} 0 0" />
     <parent link="base_link" />
