@@ -31,3 +31,31 @@ Run rviz with `laser_scan_manual.rviz` config.
 rosrun rviz rviz -d rviz_configs/laser_scan_manual.rviz
 ```
 
+## Launch rrt exploration
+
+To start rrt exploration for single robot.
+
+```
+# ssh into wheeltec robot
+roslaunch turn_on_wheeltec_robot rrt_slam.launch
+```
+
+Run rviz with `rrt_exploration.rviz` config.
+
+```
+rosrun rviz rviz -d rviz_configs/rrt_exploration.rviz
+```
+
+In rviz, use the "Publish Point" tool to publish 5 points to the `/clicked_point` topic. The first 4 points define a rectangular region for the robot to explore. The last point defines the origin of the RRT in the global and local frontier detectors.
+
+### Save map
+
+To save a map to disk in `map.pgm` and `map.yaml` formats with `map_server`.
+
+```
+rosrun map_server map_saver [--occ <threshold_occupied>] [--free <threshold_free>] [-f <mapname>] map:=/your/costmap/topic
+
+# simple example
+rosrun map_server map_saver -f new_map
+```
+
