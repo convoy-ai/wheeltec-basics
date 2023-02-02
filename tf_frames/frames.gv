@@ -1,0 +1,16 @@
+digraph G {
+"base_footprint" -> "base_link"[label=" Broadcaster: /base_to_link\nAverage rate: 10.193\nBuffer length: 4.905\nMost recent transform: 1669616796.7\nOldest transform: 1669616791.795\n"];
+"odom_combined" -> "base_footprint"[label=" Broadcaster: /robot_pose_ekf\nAverage rate: 20.207\nBuffer length: 4.85\nMost recent transform: 1669616796.608\nOldest transform: 1669616791.758\n"];
+"base_footprint" -> "gyro_link"[label=" Broadcaster: /base_to_gyro\nAverage rate: 10.194\nBuffer length: 4.905\nMost recent transform: 1669616796.72\nOldest transform: 1669616791.815\n"];
+"base_footprint" -> "camera_link"[label=" Broadcaster: /base_to_camera\nAverage rate: 10.193\nBuffer length: 4.905\nMost recent transform: 1669616796.72\nOldest transform: 1669616791.815\n"];
+"map" -> "odom_combined"[label=" Broadcaster: /slam_gmapping\nAverage rate: 20.206\nBuffer length: 4.85\nMost recent transform: 1669616796.643\nOldest transform: 1669616791.793\n"];
+"base_link" -> "left_front_link"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10.208\nBuffer length: 4.8\nMost recent transform: 1669616796.545\nOldest transform: 1669616791.745\n"];
+"base_link" -> "left_wheel_link"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10.208\nBuffer length: 4.8\nMost recent transform: 1669616796.545\nOldest transform: 1669616791.745\n"];
+"base_link" -> "right_front_link"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10.208\nBuffer length: 4.8\nMost recent transform: 1669616796.545\nOldest transform: 1669616791.745\n"];
+"base_link" -> "right_wheel_link"[label=" Broadcaster: /robot_state_publisher\nAverage rate: 10.208\nBuffer length: 4.8\nMost recent transform: 1669616796.545\nOldest transform: 1669616791.745\n"];
+"base_footprint" -> "laser"[label=" Broadcaster: /base_to_laser\nAverage rate: 10.197\nBuffer length: 4.805\nMost recent transform: 1669616796.73\nOldest transform: 1669616791.924\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1669616796.7382362"[ shape=plaintext ] ;
+}->"map";
+}
