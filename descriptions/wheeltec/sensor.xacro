@@ -19,6 +19,10 @@
     </visual>
   </link>
 
+  <gazebo reference="laser_link">
+    <material>Gazebo/Red</material>
+  </gazebo>
+
   <!-- gyro -->
 
   <joint name="gyro_joint" type="fixed">
@@ -29,12 +33,16 @@
 
   <link name="gyro_link">
     <visual>
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <geometry>
-      <box size="0.04 0.03 0.015" />
-    </geometry>
-    <material name="orange" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.04 0.03 0.015" />
+      </geometry>
+      <material name="orange" />
     </visual>
   </link>
+
+  <gazebo reference="gyro_link">
+    <material>Gazebo/Orange</material>
+  </gazebo>
 
 </robot>
