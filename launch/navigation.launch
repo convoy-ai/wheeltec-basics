@@ -20,7 +20,7 @@
         
         <rosparam file="$(find wheeltec_basics)/params/navigation/global_costmap_params.yml" command="load" /> 
         
-        <rosparam file="$(find wheeltec_basics)/params/navigation/base_local_planner_params.yml" command="load" />
+        <rosparam file="$(find wheeltec_basics)/params/navigation/teb_local_planner_params.yml" command="load" />
     </node>
 
 </launch>
