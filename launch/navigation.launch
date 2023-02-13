@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<launch>
+
+    <arg name="use_static_map" default="true"/>
+
+    <group if="$(arg use_static_map)">
+        <!-- launch AMCL to localize robot in a map -->
+        <!-- broadcast transform between global frame and odom frame -->
+        <!-- <include file="$(find wheeltec_basics)/launch/amcl_omni.launch" /> -->
+    </group>
+  
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+        <rosparam file="$(find wheeltec_basics)/params/navigation/move_base.yml" command="load"/>
+
+        <rosparam file="$(find wheeltec_basics)/params/navigation/costmap_common_params.yml" command="load" ns="global_costmap" />
+
+        <rosparam file="$(find wheeltec_basics)/params/navigation/costmap_common_params.yml" command="load" ns="local_costmap" />
+
+        <rosparam file="$(find wheeltec_basics)/params/navigation/local_costmap_params.yml" command="load" />
+        
+        <rosparam file="$(find wheeltec_basics)/params/navigation/global_costmap_params.yml" command="load" /> 
+        
+        <rosparam file="$(find wheeltec_basics)/params/navigation/base_local_planner_params.yml" command="load" />
+    </node>
+
+</launch>
