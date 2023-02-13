@@ -6,7 +6,7 @@
     <group if="$(arg use_static_map)">
         <!-- launch AMCL to localize robot in a map -->
         <!-- broadcast transform between global frame and odom frame -->
-        <!-- <include file="$(find wheeltec_basics)/launch/amcl_omni.launch" /> -->
+        <include file="$(find wheeltec_basics)/launch/amcl_omni.launch" /> 
     </group>
   
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
