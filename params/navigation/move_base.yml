@@ -1,0 +1,6 @@
+controller_frequency: 5.0
+planner_frequency: 1.0
+max_planning_retries: 1
+
+base_global_planner: "global_planner/GlobalPlanner"
+base_local_planner: "teb_local_planner/TebLocalPlannerROS"
