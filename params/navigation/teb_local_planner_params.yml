@@ -23,8 +23,8 @@ TebLocalPlannerROS:
     type: "circular"
     radius: 0.15
 
-  xy_goal_tolerance: 0.1
-  yaw_goal_tolerance: 0.1
+  xy_goal_tolerance: 0.25
+  yaw_goal_tolerance: 3.14 # full orientation tolerance
 
   min_obstacle_dist: 0.1
   inflation_dist: 0.15 # should be greater than min_obstacle_dist
