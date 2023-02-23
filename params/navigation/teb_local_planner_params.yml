@@ -10,9 +10,9 @@ TebLocalPlannerROS:
   acc_lim_x: 0.3
   acc_lim_y: 0.3
   acc_lim_theta: 0.5
-  max_vel_x: 0.4
-  max_vel_y: 0.3
-  max_vel_theta: 0.3
+  max_vel_x: 1.0
+  max_vel_y: 1.0
+  max_vel_theta: 0.5
   wheel_base: 0.17
   weight_kinematics_nh: 10 # satisfy non-holonomic kinematics, default: 1000
 
