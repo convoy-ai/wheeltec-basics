@@ -18,8 +18,8 @@
     <param name="occ_thresh" value="0.25" />
 
     <!-- set maxUrange < max range of sensor <= max range -->
-    <param name="maxUrange" value="11" />
-    <param name="maxRange" value="12" /> 
+    <param name="maxUrange" value="2.5" />
+    <param name="maxRange" value="3.5" /> 
 
   </node>
 
