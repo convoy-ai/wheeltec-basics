@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <arg name="namespace" default="robot" />
+  <arg name="robot_type" default="wheeltec"/>
+  <arg name="spawn_location" default="-x 0.0 -y 0.0 -Y 0.0" />
+
+  <group if="$(eval arg('robot_type') == 'wheeltec')">
+    <include file="$(find wheeltec_basics)/launch/wheeltec.launch">
+      <arg name="namespace" value="$(arg namespace)" />
+    </include>
+  </group>
+
+  <group if="$(eval arg('robot_type') == 'articubot')">
+    <include file="$(find wheeltec_basics)/launch/articubot.launch" />
+  </group>
+  
+  <!-- Spawn a robot into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" 
+    args="-param robot_description -urdf -model $(arg namespace) $(arg spawn_location)" />
+
+  <!-- SLAM -->
+  <include file="$(find wheeltec_basics)/launch/slam.launch">
+    <arg name="namespace" value="$(arg namespace)" />
+  </include>
+
+  <!-- Navigation -->
+  <include file="$(find wheeltec_basics)/launch/navigation.launch">
+    <arg name="namespace" value="$(arg namespace)" />
+  </include>
+  
+</launch>

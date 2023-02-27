@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <!-- Launch gazebo world -->
+  <include file="$(find wheeltec_basics)/launch/gazebo.launch">
+    <arg name="world_name" value="$(find wheeltec_basics)/worlds/turtlebot3_stage_4.world"/>
+  </include>
+
+
+  <group ns="robot_1">
+    <include file="$(find wheeltec_basics)/launch/sim_robot.launch">
+      <arg name="namespace" value="robot_1" />
+      <arg name="spawn_location" value="-x -0.3 -y 0.3 -Y 0.6" />
+    </include>
+  </group>
+
+</launch>

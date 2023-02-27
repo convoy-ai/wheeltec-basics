@@ -8,11 +8,11 @@
 
         <rosparam file="$(find wheeltec_basics)/params/navigation/costmap_common_params.yml" command="load" ns="global_costmap" />
         <param name="global_costmap/laser_scan_sensor/sensor_frame" value="$(arg namespace)/laser_link" />
-        <param name="global_costmap/laser_scan_sensor/topic" value="$(arg namespace)/scan" />
+        <param name="global_costmap/laser_scan_sensor/topic" value="/$(arg namespace)/scan" />
 
         <rosparam file="$(find wheeltec_basics)/params/navigation/costmap_common_params.yml" command="load" ns="local_costmap" />
         <param name="local_costmap/laser_scan_sensor/sensor_frame" value="$(arg namespace)/laser_link" />
-        <param name="local_costmap/laser_scan_sensor/topic" value="$(arg namespace)/scan" />
+        <param name="local_costmap/laser_scan_sensor/topic" value="/$(arg namespace)/scan" />
 
         <rosparam file="$(find wheeltec_basics)/params/navigation/global_costmap_params.yml" command="load" /> 
         <param name="global_costmap/global_frame" value="$(arg namespace)/map" />
@@ -23,8 +23,8 @@
         <param name="local_costmap/robot_base_frame" value="$(arg namespace)/base_link" />
         
         <rosparam file="$(find wheeltec_basics)/params/navigation/teb_local_planner_params.yml" command="load" />
-        <param name="TebLocalPlannerRos/odom_topic" value="$(arg namespace)/odom" />
         <param name="TebLocalPlannerRos/map_frame" value="$(arg namespace)/map" />
+        <param name="TebLocalPlannerRos/odom_topic" value="/$(arg namespace)/odom" />
     </node>
 
 </launch>
