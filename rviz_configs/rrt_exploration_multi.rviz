@@ -166,7 +166,7 @@ Visualization Manager:
       Marker Topic: /global_detector/shapes
       Name: Marker
       Namespaces:
-        markers: true
+        {}
       Queue Size: 100
       Value: true
     - Class: rviz/Marker
@@ -174,7 +174,7 @@ Visualization Manager:
       Marker Topic: /frontiers
       Name: Marker
       Namespaces:
-        markers2: true
+        {}
       Queue Size: 100
       Value: true
     - Alpha: 1
@@ -241,7 +241,7 @@ Visualization Manager:
       Marker Topic: /robot_1/local_detector/shapes
       Name: Marker
       Namespaces:
-        markers: true
+        {}
       Queue Size: 100
       Value: true
     - Alpha: 1
@@ -268,6 +268,16 @@ Visualization Manager:
       Topic: /robot_1/move_base/TebLocalPlannerROS/global_plan
       Unreliable: false
       Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: false
+      Name: Map
+      Topic: /robot_1/map
+      Unreliable: false
+      Use Timestamp: false
+      Value: false
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
@@ -332,7 +342,7 @@ Visualization Manager:
       Marker Topic: /robot_2/local_detector/shapes
       Name: Marker
       Namespaces:
-        markers: true
+        {}
       Queue Size: 100
       Value: true
     - Alpha: 1
@@ -359,6 +369,16 @@ Visualization Manager:
       Topic: /robot_2/move_base/GlobalPlanner/plan
       Unreliable: false
       Value: true
+    - Alpha: 0.699999988079071
+      Class: rviz/Map
+      Color Scheme: map
+      Draw Behind: false
+      Enabled: false
+      Name: Map
+      Topic: /robot_2/map
+      Unreliable: false
+      Use Timestamp: false
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -387,7 +407,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 6.809581756591797
+      Distance: 7.323615074157715
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
