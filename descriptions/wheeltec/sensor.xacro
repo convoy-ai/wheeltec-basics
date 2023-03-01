@@ -3,13 +3,13 @@
 
   <!-- laser -->
 
-  <joint name="laser_joint" type="fixed">
+  <joint name="$(arg namespace)/laser_joint" type="fixed">
     <origin xyz="0.05 0.00 0.18" rpy="0 0 0" />
-    <parent link="base_link" />
-    <child link="laser_link" />
+    <parent link="$(arg namespace)/base_link" />
+    <child link="$(arg namespace)/laser_link" />
   </joint>
 
-  <link name="laser_link">
+  <link name="$(arg namespace)/laser_link">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
@@ -19,7 +19,7 @@
     </visual>
   </link>
 
-  <gazebo reference="laser_link">
+  <gazebo reference="$(arg namespace)/laser_link">
     <material>Gazebo/Red</material>
 
     <sensor name="laser" type="ray">
@@ -42,7 +42,7 @@
 
         <range>
           <min>0.05</min>
-          <max>3</max>
+          <max>12</max>
           <resolution>0.005</resolution>
         </range>
 
@@ -53,9 +53,9 @@
         </noise>
       </ray>
 
-      <plugin name="laser_controller" filename="libgazebo_ros_laser.so">
-        <topicName>/scan</topicName>
-        <frameName>laser_link</frameName>
+      <plugin name="$(arg namespace)/laser" filename="libgazebo_ros_laser.so">
+        <topicName>scan</topicName>
+        <frameName>$(arg namespace)/laser_link</frameName>
       </plugin>
 
     </sensor>
@@ -63,13 +63,13 @@
 
   <!-- gyro -->
 
-  <joint name="gyro_joint" type="fixed">
+  <joint name="$(arg namespace)/gyro_joint" type="fixed">
     <origin xyz="-0.04 0.00 0.14" rpy="0 0 0" />
-    <parent link="base_link" />
-    <child link="gyro_link" />
+    <parent link="$(arg namespace)/base_link" />
+    <child link="$(arg namespace)/gyro_link" />
   </joint>
 
-  <link name="gyro_link">
+  <link name="$(arg namespace)/gyro_link">
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
@@ -79,7 +79,7 @@
     </visual>
   </link>
 
-  <gazebo reference="gyro_link">
+  <gazebo reference="$(arg namespace)/gyro_link">
     <material>Gazebo/Orange</material>
   </gazebo>
 

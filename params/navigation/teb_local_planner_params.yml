@@ -1,23 +1,20 @@
 TebLocalPlannerROS:
 
-  odom_topic: odom
-  map_frame: map
-    
   teb_autosize: True
   dt_ref: 0.3
   dt_hysteresis: 0.1
   global_plan_overwrite_orientation: True
   max_global_plan_lookahead_dist: 3.0
-  feasibility_check_no_poses: 5
+  feasibility_check_no_poses: 4
 
   acc_lim_x: 0.3
   acc_lim_y: 0.3
   acc_lim_theta: 0.5
-  max_vel_x: 0.4
-  max_vel_y: 0.3
-  max_vel_theta: 0.3
-  wheel_base: 0.17
-  weight_kinematics_nh: 10 # satisfy non-holonomic kinematics, default: 1000
+  max_vel_x: 0.5
+  max_vel_y: 0.4
+  max_vel_theta: 0.5
+  max_vel_x_backwards: 0.3
+  free_goal_vel: false
 
   footprint_model:
     type: "circular"
@@ -26,5 +23,16 @@ TebLocalPlannerROS:
   xy_goal_tolerance: 0.25
   yaw_goal_tolerance: 3.14 # full orientation tolerance
 
+  allow_init_with_backwards_motion: true
+
+  # optimization parameters
+  no_inner_iterations: 3
+  no_outer_iterations: 2
+  weight_kinematics_nh: 10 # satisfy non-holonomic kinematics, default: 1000
+
+  # parallel planning
+  enable_homotopy_class_planning: true
+  enable_multithreading: true
+
   min_obstacle_dist: 0.1
-  inflation_dist: 0.15 # should be greater than min_obstacle_dist
+  inflation_dist: 0.125 # should be greater than min_obstacle_dist

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <!-- Launch gazebo world -->
+  <include file="$(find wheeltec_basics)/launch/gazebo.launch">
+    <arg name="world_name" value="$(find wheeltec_basics)/worlds/turtlebot3_stage_4.world"/>
+    <arg name="gui" value="false" />
+  </include>
+
+
+  <group ns="robot_1">
+    <include file="$(find wheeltec_basics)/launch/sim_robot.launch">
+      <arg name="namespace" value="robot_1" />
+      <arg name="spawn_location" value="-x -2.0 -y 1.2 -Y 0.6" />
+    </include>
+  </group>
+
+
+  <group ns="robot_2">
+    <include file="$(find wheeltec_basics)/launch/sim_robot.launch">
+      <arg name="namespace" value="robot_2" />
+      <arg name="spawn_location" value="-x 1.9 -y -0.9 -Y -2.0" />
+    </include>
+  </group>
+
+
+  <!-- Map merge -->
+  <param name="robot_1/map_merge/init_pose_x" value="0.0" />
+  <param name="robot_1/map_merge/init_pose_y" value="0.0" />
+  <param name="robot_1/map_merge/init_pose_yaw" value="0.0" />
+
+  <param name="robot_2/map_merge/init_pose_x" value="0.0" />
+  <param name="robot_2/map_merge/init_pose_y" value="0.0" />
+  <param name="robot_2/map_merge/init_pose_yaw" value="0.0" />
+  
+  <node pkg="map_merge" type="map_merge.py" respawn="false" name="map_merge" output="screen">
+    <param name="rate" value="0.25" />
+    <param name="robot_count" value="2" />
+  </node>
+
+</launch>
