@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /Marker1/Status1
         - /RobotModel1/Status1
       Splitter Ratio: 0.5176470875740051
     Tree Height: 510
@@ -163,18 +164,10 @@ Visualization Manager:
       Value: true
     - Class: rviz/Marker
       Enabled: true
-      Marker Topic: /global_detector/shapes
-      Name: Marker
-      Namespaces:
-        {}
-      Queue Size: 100
-      Value: true
-    - Class: rviz/Marker
-      Enabled: true
       Marker Topic: /frontiers
       Name: Marker
       Namespaces:
-        {}
+        markers2: true
       Queue Size: 100
       Value: true
     - Alpha: 1
@@ -238,10 +231,18 @@ Visualization Manager:
       Visual Enabled: true
     - Class: rviz/Marker
       Enabled: true
+      Marker Topic: /robot_1/global_detector/shapes
+      Name: Marker
+      Namespaces:
+        markers: true
+      Queue Size: 100
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
       Marker Topic: /robot_1/local_detector/shapes
       Name: Marker
       Namespaces:
-        {}
+        markers: true
       Queue Size: 100
       Value: true
     - Alpha: 1
@@ -339,10 +340,18 @@ Visualization Manager:
       Visual Enabled: true
     - Class: rviz/Marker
       Enabled: true
+      Marker Topic: /robot_2/global_detector/shapes
+      Name: Marker
+      Namespaces:
+        markers: true
+      Queue Size: 100
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
       Marker Topic: /robot_2/local_detector/shapes
       Name: Marker
       Namespaces:
-        {}
+        markers: true
       Queue Size: 100
       Value: true
     - Alpha: 1
@@ -443,5 +452,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 1368
-  X: 497
-  Y: 143
+  X: 72
+  Y: 27
