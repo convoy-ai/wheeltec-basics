@@ -19,7 +19,15 @@
   <group ns="robot_2">
     <include file="$(find wheeltec_basics)/launch/sim_robot.launch">
       <arg name="namespace" value="robot_2" />
-      <arg name="spawn_location" value="-x 1.9 -y -0.9 -Y -2.0" />
+      <arg name="spawn_location" value="-x 0.7 -y -1.8 -Y -1.8" />
+    </include>
+  </group>
+
+
+  <group ns="robot_3">
+    <include file="$(find wheeltec_basics)/launch/sim_robot.launch">
+      <arg name="namespace" value="robot_3" />
+      <arg name="spawn_location" value="-x 1.9 -y 1.7 -Y 2.3" />
     </include>
   </group>
 
@@ -33,10 +41,14 @@
   <param name="robot_2/map_merge/init_pose_y" value="0.0" />
   <param name="robot_2/map_merge/init_pose_yaw" value="0.0" />
   
+  <param name="robot_3/map_merge/init_pose_x" value="0.0" />
+  <param name="robot_3/map_merge/init_pose_y" value="0.0" />
+  <param name="robot_3/map_merge/init_pose_yaw" value="0.0" />
+  
   <node pkg="map_merge" type="map_merge.py" respawn="false" name="map_merge" output="screen">
     <param name="rate" value="1" />
     <param name="merge_subprocess_count" value="2" />
-    <param name="robot_count" value="2" />
+    <param name="robot_count" value="3" />
   </node>
 
 </launch>
