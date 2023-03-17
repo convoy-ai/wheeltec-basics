@@ -34,7 +34,8 @@
   <param name="robot_2/map_merge/init_pose_yaw" value="0.0" />
   
   <node pkg="map_merge" type="map_merge.py" respawn="false" name="map_merge" output="screen">
-    <param name="rate" value="0.25" />
+    <param name="rate" value="1" />
+    <param name="merge_subprocess_count" value="2" />
     <param name="robot_count" value="2" />
   </node>
 
